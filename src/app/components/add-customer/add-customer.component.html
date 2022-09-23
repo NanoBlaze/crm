@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-5 order-sm-2 order-lg-1 order-2">
+    <h4 class="text-primary addCustomer text-sm-center text-center">
+      Add new customer
+    </h4>
+    <form #customerForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            [(ngModel)]="customer.firstName"
+            #name="ngModel"
+            required
+            placeholder="firstName"
+          />
+
+          <label class="fontS">First Name: </label>
+        </div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            [(ngModel)]="customer.lastName"
+            #name="ngModel"
+            required
+            placeholder="lastName"
+          />
+
+          <label class="fontS">Last Name: </label>
+        </div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="phone"
+            name="phone"
+            required
+            pattern="\b\d{3}[-]?\d{3}[-]?\d{4}|\d{2}[-]?\d{3}[-]?\d{4}|\d{1}[-]?\d{3}[-]?\d{6}|\d{1}[-]?\d{3}[-]?\d{2}[-]?\d{2}[-]?\d{2}|\*{1}?\d{2,5}\b"
+            [(ngModel)]="customer.phone"
+            #name="ngModel"
+            placeholder="phone"
+          />
+          <label class="fontS">Phone: </label>
+        </div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="email"
+            name="email"
+            required
+            [(ngModel)]="customer.email"
+            #name="ngModel"
+            placeholder="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          />
+          <label class="fontS">Email: </label>
+        </div>
+      </div>
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="address"
+            name="address"
+            [(ngModel)]="customer.address"
+            #name="ngModel"
+            placeholder="address"
+          />
+          <label class="fontS">Address: </label>
+        </div>
+      </div>
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="notes"
+            name="notes"
+            [(ngModel)]="customer.notes"
+            #name="ngModel"
+            placeholder="notes"
+          />
+          <label class="fontS">Notes: </label>
+        </div>
+      </div>
+      <button type="submit" class="btn button-87 btn-primary w-100 mt-3 py-3">
+        <i class="fa-solid fa-user-plus mx-2"></i>Add Customer
+      </button>
+    </form>
+  </div>
+  <div
+    class="col-sm-12 col-md-12 col-lg-7 align-self-center text-center d-lg-block d-md-block order-sm-1 order-lg-2 order-1"
+  >
+    <img
+      class="img-fluid w-85"
+      src="https://storage.googleapis.com/www-reallysimple/Device-view-of-Really-Simple-Systems-CRM.png"
+      alt=""
+    />
+  </div>
+</div>

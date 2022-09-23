@@ -1,0 +1,70 @@
+.fontS {
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #0D6EFD;
+    border-left: 5px solid #0D6EFD;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);
+}
+
+
+
+/* ///////////// */
+
+.button-87 {
+    padding: 5px;
+    text-align: center;
+
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0px 0px 14px -7px #0d6efd;
+    background-image: linear-gradient(45deg,
+            #0d6efd 0%,
+            #508eeb 51%,
+            #0d6efd 100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-87:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-87:active {
+    transform: scale(0.95);
+}
+
+
+.addCustomer {
+    font-weight: 800;
+        font-size: 30px;
+}
+@media (min-width: 768px) {
+    .text-sm-center {
+        text-align: left !important;
+        
+    }
+}
+
+@media (max-width: 768px){
+    .addCustomer {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .w-85 {
+            width: 100% !important;
+            padding-top: 1rem;
+            padding-bottom: 3rem;
+        }
+}

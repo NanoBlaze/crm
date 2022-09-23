@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crm-ivan": {
+      "hosting": {
+        "crm": [
+          "crm-ivan"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crm-ivan"
+  }
+}

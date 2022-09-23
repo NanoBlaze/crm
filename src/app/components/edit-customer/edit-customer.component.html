@@ -1,0 +1,262 @@
+<!-- <div>
+  <h4 class="d-flex">Add new customer</h4>
+  <form #customerForm="ngForm" (ngSubmit)="updateCustomer()">
+    <div class="form-group">
+      <label for="name">First name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        [(ngModel)]="customer.firstName"
+        #name="ngModel"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="customer.lastName"
+        #lastName="ngModel"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input
+        name="phone"
+        id="phone"
+        name="phone"
+        [(ngModel)]="customer.phone"
+        class="form-control"
+        #phone="ngModel"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="customer.email"
+        #email="ngModel"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success mt-4">update Book</button>
+  </form>
+</div> -->
+<div class="modalBox updateFont">
+  <div class="bgModal">
+    <h4 class="bgTitle p-3 text-light updateCustomer text-center">
+      <i class="fa-solid fa-user-pen text-light pe-2"></i>Update Customer
+    </h4>
+
+    <div class="d-flex justify-content-center form-floating mt-3">
+      <div class="form-floating w-75">
+        <input
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          [(ngModel)]="customer.firstName"
+          #name="ngModel"
+          required
+          placeholder="firstName"
+        />
+
+        <label class="fontS">First Name: </label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center form-floating mt-3">
+      <div class="form-floating w-75">
+        <input
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          [(ngModel)]="customer.lastName"
+          #name="ngModel"
+          required
+          placeholder="lastName"
+        />
+
+        <label class="fontS">Last Name: </label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center form-floating mt-3">
+      <div class="form-floating w-75">
+        <input
+          class="form-control"
+          id="phone"
+          name="phone"
+          [(ngModel)]="customer.phone"
+          #name="ngModel"
+          required
+          placeholder="phone"
+        />
+
+        <label class="fontS">Phone: </label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center form-floating mt-3">
+      <div class="form-floating w-75">
+        <input
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="customer.email"
+          #name="ngModel"
+          required
+          placeholder="email"
+        />
+
+        <label class="fontS">Email: </label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center form-floating mt-3">
+      <div class="form-floating w-75">
+        <input
+          class="form-control"
+          id="address"
+          name="address"
+          [(ngModel)]="customer.address"
+          #name="ngModel"
+          required
+          placeholder="address"
+        />
+
+        <label class="fontS">Address: </label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center form-floating mt-3">
+      <div class="form-floating w-75">
+        <input
+          class="form-control"
+          id="notes"
+          name="notes"
+          [(ngModel)]="customer.notes"
+          #name="ngModel"
+          required
+          placeholder="notes"
+        />
+
+        <label class="fontS">Notes: </label>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <button
+        (click)="updateCustomer()"
+        class="btn mt-3 w-100 border-0 rounded-0 modalBoxUpdate text-light"
+      >
+        <i class="fa-solid fa-caret-left"></i> Update
+      </button>
+      <button
+        (click)="closeModal()"
+        class="btn mt-3 w-100 border-0 rounded-0 modalBoxExit text-light"
+      >
+        <i class="fa-solid fa-caret-left"></i> Go Back
+      </button>
+    </div>
+  </div>
+</div>
+<!-- 
+    <form #customerForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            [(ngModel)]="customer.firstName"
+            #name="ngModel"
+            required
+            placeholder="firstName"
+          />
+
+          <label class="fontS">First Name: </label>
+        </div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            [(ngModel)]="customer.lastName"
+            #name="ngModel"
+            required
+            placeholder="lastName"
+          />
+
+          <label class="fontS">Last Name: </label>
+        </div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="phone"
+            name="phone"
+            required
+            pattern="\b\d{3}[-]?\d{3}[-]?\d{4}|\d{2}[-]?\d{3}[-]?\d{4}|\d{1}[-]?\d{3}[-]?\d{6}|\d{1}[-]?\d{3}[-]?\d{2}[-]?\d{2}[-]?\d{2}|\*{1}?\d{2,5}\b"
+            [(ngModel)]="customer.phone"
+            #name="ngModel"
+            placeholder="phone"
+          />
+          <label class="fontS">Phone: </label>
+        </div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="email"
+            name="email"
+            required
+            [(ngModel)]="customer.email"
+            #name="ngModel"
+            placeholder="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          />
+          <label class="fontS">Email: </label>
+        </div>
+      </div>
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="address"
+            name="address"
+            [(ngModel)]="customer.address"
+            #name="ngModel"
+            placeholder="address"
+          />
+          <label class="fontS">Address: </label>
+        </div>
+      </div>
+      <div class="form-floating mt-3">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="notes"
+            name="notes"
+            [(ngModel)]="customer.notes"
+            #name="ngModel"
+            placeholder="notes"
+          />
+          <label class="fontS">Notes: </label>
+        </div>
+      </div>
+      <button type="submit" class="btn button-87 btn-primary w-100 mt-3 py-3">
+        <i class="fa-solid fa-user-plus mx-2"></i>Add Customer
+      </button>
+    </form> -->

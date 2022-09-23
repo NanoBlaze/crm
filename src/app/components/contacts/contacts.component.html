@@ -1,0 +1,160 @@
+<div class="card customMargin cardNew">
+  <div class="card-body customPadding">
+    <div class="row">
+      <div class="col-xl-8 col-lg-12 col-sm-12">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            id="floatingSearch"
+            [(ngModel)]="searchText"
+            autocomplete="off"
+            name="search"
+            required
+            placeholder="search"
+          />
+
+          <label class="fontS" for="floatingSearch"
+            >Start searching for a contact...
+          </label>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="d-xl-flex d-none h-100">
+          <button
+            class="btn btn-primary w-100"
+            (click)="toggleShowCard()"
+            [ngClass]="btnClass"
+          >
+            <i class="fa-regular fa-address-card pe-1"></i>
+            Cards
+          </button>
+          <div class="d-flex mx-2 align-self-center">
+            <i class="fa-solid fa-caret-left" [ngClass]="arrowLeft"></i>
+            <i class="fa-solid fa-caret-right" [ngClass]="arrowRight"></i>
+          </div>
+
+          <button
+            class="btn btn-primary w-100"
+            [ngClass]="btnClass2"
+            (click)="toggleShowTable()"
+          >
+            <i class="fa-solid fa-table-columns pe-1"></i>
+            Table
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="pt-3 row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4 flex-wrap"
+      *ngIf="cardDisplay"
+    >
+      <div
+        class="col"
+        *ngFor="let contact of contacts | filter: searchText; index as i"
+      >
+        <div class="card cardWithoutMargin">
+          <div class="card-header bgSide text-light"># {{ i + 1 }}</div>
+          <div class="card-body">
+            <h5 class="card-title mb-3 mt-1">
+              {{ contact.name }}
+            </h5>
+
+            <p class="card-text fontS hover-underline-animation">
+              <a class="card-text fontS hover-underline-animation">
+                <i class="fa-solid fa-cake pe-1"></i
+                >{{ contact.birthday | date: "fullDate" }}</a
+              >
+            </p>
+            <br />
+            <p class="card-text fontS hover-underline-animation">
+              <a
+                class="hover-underline-animation"
+                href="mailto:{{ contact.email }}"
+                ><i class="fa-solid fa-envelope-circle-check pe-1"></i
+                >{{ contact.email }}</a
+              >
+            </p>
+            <br />
+            <p class="card-text fontS hover-underline-animation">
+              <a
+                class="card-text fontS hover-underline-animation"
+                href="tel:{{ contact.phones }}"
+              >
+                <i
+                  *ngIf="contact.phones.length > 0"
+                  class="fa-solid fa-phone pe-1"
+                ></i
+                >{{ contact.phones[0] }}</a
+              >
+            </p>
+            <Br />
+            <p class="card-text fontS hover-underline-animation">
+              <a
+                class="card-text fontS hover-underline-animation"
+                href="tel:{{ contact.phones }}"
+              >
+                <i
+                  *ngIf="contact.phones.length > 1"
+                  class="fa-solid fa-phone pe-1"
+                ></i>
+                {{ contact.phones[1] }}</a
+              >
+            </p>
+            <Br />
+            <p class="card-text fontS hover-underline-animation">
+              <a
+                class="card-text fontS hover-underline-animation"
+                href="tel:{{ contact.phones }}"
+              >
+                <i
+                  *ngIf="contact.phones.length > 2"
+                  class="fa-solid fa-phone pe-1"
+                ></i
+                >{{ contact.phones[2] }}</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-3" *ngIf="tableDisplay" [ngClass]="htmlStyles">
+      <table class="table table-dark table-striped align-middle">
+        <thead>
+          <tr>
+            <th style="width: 2%" scope="col" class="text-center">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="p-5"
+            *ngFor="let contact of contacts | filter: searchText; index as i"
+          >
+            <td class="text-center">
+              <b>{{ i + 1 }}</b>
+            </td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.birthday | date: "fullDate" }}</td>
+            <td>
+              <div *ngIf="contact.phones.length > 0">
+                {{ contact.phones[0] }}
+              </div>
+              <div *ngIf="contact.phones.length > 1">
+                {{ contact.phones[1] }}
+              </div>
+              <div *ngIf="contact.phones.length > 2">
+                {{ contact.phones[2] }}
+              </div>
+            </td>
+            <td>{{ contact.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

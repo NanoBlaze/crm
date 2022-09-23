@@ -1,0 +1,137 @@
+<div class="row">
+  <div class="col-lg-8 col-sm-12">
+    <div class="form-floating">
+      <input
+        class="form-control"
+        id="floatingSearch"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        name="search"
+        required
+        placeholder="search"
+      />
+
+      <label class="fontS" for="floatingSearch"
+        >Start searching for a customer...
+      </label>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="d-lg-flex d-none h-100">
+      <button
+        class="btn btn-primary w-100"
+        [ngClass]="btnClass"
+        (click)="toggleShowCard()"
+      >
+        <i class="fa-regular fa-address-card pe-1"></i>
+        Cards
+      </button>
+      <div class="d-flex mx-2 align-self-center">
+        <i class="fa-solid fa-caret-left" [ngClass]="arrowLeft"></i>
+        <i class="fa-solid fa-caret-right" [ngClass]="arrowRight"></i>
+      </div>
+
+      <button
+        class="btn btn-primary w-100"
+        [ngClass]="btnClass2"
+        (click)="toggleShowTable()"
+      >
+        <i class="fa-solid fa-table-columns pe-1"></i>
+        Table
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pt-3 row row-cols-lg-2 row-cols-sm-1 row-cols-md-2 g-4 flex-wrap"
+  *ngIf="cardDisplay"
+>
+  <div
+    class="col"
+    *ngFor="let customer of customers | filter: searchText; index as i"
+  >
+    <div class="card cardWithoutMargin">
+      <div class="card-header bgSide text-light"># {{ i + 1 }}</div>
+      <div class="card-body">
+        <h5 class="card-title mb-3 mt-1">
+          {{ customer.firstName }} {{ customer.lastName }}
+        </h5>
+
+        <p class="card-text fontS hover-underline-animation">
+          <i class="fa-solid fa-envelope-circle-check pe-1"></i>
+          {{ customer.email }}
+        </p>
+        <br />
+        <p class="card-text fontS hover-underline-animation">
+          <i class="fa-solid fa-phone pe-1"></i>
+          <a
+            class="card-text fontS hover-underline-animation ps-1"
+            href="tel:{{ customer.phone }}"
+            >{{ customer.phone }}</a
+          >
+        </p>
+        <div class="d-grid cardsMedium fontS">
+          <a class="button-27 px-2 my-2 me-2" (click)="viewCustomer(customer)"
+            ><i class="fa-solid fa-eye text-light pe-2"></i>View</a
+          >
+
+          <a class="button-97 px-2 my-2 me-2" (click)="updateCustomer(customer)"
+            ><i class="fa-solid fa-user-pen pe-2"></i>Edit</a
+          >
+
+          <a class="button-17 px-2 my-2 me-2" (click)="deleteCustomer(customer)"
+            ><i class="fa-solid fa-user-minus pe-2"></i>Delete</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pt-3" *ngIf="tableDisplay" [ngClass]="htmlStyles">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th style="width: 2%" scope="col" class="text-center">#</th>
+        <th style="width: 15%" scope="col">First Name</th>
+        <th style="width: 15%" scope="col">Last Name</th>
+        <th style="width: 15%" scope="col">Phone</th>
+        <th style="width: 50%" scope="col">Email</th>
+        <th style="width: 3.3%" scope="col " class="text-center">View</th>
+        <th style="width: 2%" scope="col" class="text-center">Edit</th>
+        <th style="width: 2%" scope="col" class="text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers | filter: searchText; index as i">
+        <td class="text-center">
+          <b>{{ i + 1 }}</b>
+        </td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.email }}</td>
+        <td class="text-center">
+          <i
+            class="fa-solid fa-eye bgEdit"
+            (click)="viewCustomer(customer)"
+          ></i>
+        </td>
+        <td class="text-center">
+          <i
+            class="fa-solid fa-user-pen bgView"
+            (click)="updateCustomer(customer)"
+          ></i>
+        </td>
+
+        <td class="text-center">
+          <i
+            class="fa-solid fa-user-minus bgDelete"
+            (click)="deleteCustomer(customer)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,109 @@
+<div class="h-100 pt-lg-5">
+  <div class="container">
+    <div class="card overflow-hidden border-0 shadow">
+      <div class="card-body p-0">
+        <div class="row">
+          <div class="col-lg-5 d-lg-block bg-register-image"></div>
+          <div
+            class="col-lg-7 p-5 align-self-center d-inline-block justify-content-center"
+          >
+            <div>
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mFontH text-primary">
+                  Create an Account!
+                </h1>
+              </div>
+              <div class="container my-4">
+                <form
+                  #loginForm="ngForm"
+                  (ngSubmit)="submitRegister()"
+                  novalidate
+                >
+                  <div class="form-floating mb-3">
+                    <input
+                      type="email"
+                      class="form-control rounded-3"
+                      name="email"
+                      id="floatingInput"
+                      [(ngModel)]="user.email"
+                      #email="ngModel"
+                      required
+                      placeholder="name@example.com"
+                      email
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      minlength="6"
+                    />
+                    <small
+                      *ngIf="email.invalid && email.touched"
+                      class="errorMsg"
+                      >Invaild Email</small
+                    >
+                    <label class="mFont" for="floatingInput"
+                      >Email address</label
+                    >
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="password"
+                        [type]="showPassword ? 'text' : 'password'"
+                        class="form-control rounded-3"
+                        id="floatingPassword"
+                        name="password"
+                        [(ngModel)]="user.password"
+                        #password="ngModel"
+                        minlength="8"
+                        required
+                        placeholder="name@example.com"
+                      />
+                      <small
+                        *ngIf="password.invalid && password.touched"
+                        class="errorMsg"
+                        >Password should be at least 8 charcters</small
+                      >
+                      <div class="eye">
+                        <mat-icon
+                          matSuffix
+                          (click)="togglePasswordVisibility()"
+                        >
+                          {{ showPassword ? "visibility_off" : "visibility" }}
+                        </mat-icon>
+                      </div>
+                      <label class="mFont" for="floatingPassword"
+                        >Password
+                      </label>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="button-87 mt-2 w-100 mFontS py-2 rounded-3"
+                  >
+                    Register
+                  </button>
+                </form>
+              </div>
+              <hr />
+              <!-- <div class="text-center">
+                <a
+                  id="buttonDec"
+                  class="small mFont hover-underline-animation"
+                  href="forgot-password.html"
+                  >Forgot Password?</a
+                >
+              </div> -->
+              <div class="text-center">
+                <a
+                  class="small mFont hover-underline-animation"
+                  routerLink="/login"
+                  >Already have an account? Login!</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

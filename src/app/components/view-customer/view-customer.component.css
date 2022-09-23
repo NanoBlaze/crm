@@ -1,0 +1,42 @@
+.viewCustomer {
+    font-weight: 700;
+    font-size: 24px;
+}
+@media (max-width: 768px) {
+    .viewCustomer {
+        font-size: 18px;
+    }
+        .viewFont{
+            font-size: 14px;
+        }
+}
+
+.bgTitle{
+    background-color: #1e996c;;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+}
+
+.modalBox {
+    box-shadow: 0px 0px 10px 0 rgb(34 41 47/ 10%) !important;
+
+}
+
+.modalBoxExit{
+    background-color: #0F5964;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+}
+
+.bgModal {
+    border-radius: 5px !important;
+    background-color: white;
+    background-image: url("https://img.freepik.com/free-vector/white-gray-geometric-pattern-background-vector_53876-136510.jpg?w=740&t=st=1663877087~exp=1663877687~hmac=b7d8c009540184cd65f5a67132628f18968fee33d64bf1eba75558ce5aeac305");
+    
+  
+    
+}

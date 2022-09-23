@@ -1,0 +1,167 @@
+/* CSS */
+.button-87 {
+    padding: 5px;
+    text-align: center;
+
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0px 0px 14px -7px #0d6efd;
+    background-image: linear-gradient(45deg,
+            #0d6efd 0%,
+            #508eeb 51%,
+            #0d6efd 100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-87:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-87:active {
+    transform: scale(0.95);
+}
+
+.button-97 {
+    padding: 5px;
+    text-align: center;
+
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0px 0px 14px -7px #0d6efd;
+    background-image: linear-gradient(45deg,
+            #ea4335 0%,
+            #e67c52 51%,
+            #ea4335 100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-97:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-97:active {
+    transform: scale(0.95);
+}
+
+.bgPage {
+
+    background: rgb(38, 50, 56);
+    background: radial-gradient(circle, rgb(134, 147, 153) 0%, rgb(38, 50, 56) 100%);
+}
+
+.bg-register-image {
+    background: url("https://img.freepik.com/premium-vector/work-from-home-illustration-concept-man-working-laptop-home_427922-148.jpg?w=1380");
+    background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    height: 600px;
+}
+
+@media (max-width: 991.98px) {
+    .bg-register-image {
+        height: 300px;
+    }
+}
+
+.mFontH {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+@media (max-width: 767.98px) {
+    .mFontH {
+        font-size: 28px !important;
+    }
+}
+
+.mFontS {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.hover-underline-animation {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.form-control-user {
+    font-size: 0.8rem;
+    border-radius: 8rem;
+}
+
+.borderR {
+    border-radius: 90%;
+}
+
+.eye {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    top: 17px;
+    cursor: pointer;
+}
+
+.form-control:focus {
+    border-color: #ff80ff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);
+}
+
+.ng-valid[required] {
+    border-left: 5px solid rgb(33, 189, 33);
+}
+
+.ng-invalid[required] {
+    border-left: 5px solid red;
+}
+
+.errorMsg {
+    font-family: 'Rubik', sans-serif;
+    color: red;
+    padding-left: 13px;
+}
+
+@media (max-width: 991.98px) {
+    .h-100{
+        height: auto !important;
+    }
+}

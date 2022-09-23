@@ -1,0 +1,42 @@
+<!-- <div class="bg-dark text-white">
+  <div class="container text-center"></div>
+  <ng-container *ngIf="checkLogin()">
+    <div>Welcome back, {{ getUsername() }}</div>
+    <button class="btn btn-warning" (click)="logout()">Logout</button>
+  </ng-container>
+</div> -->
+
+<div class="head" [ngClass]="getHeadClass()">
+  <div class="head-content">
+    <div class="row">
+      <div class="col-4 col-md-4 d-lg-flex d-md-flex d-none head-content-left">
+        <i class="fa-solid fa-square text-primary"></i>
+        <marquee class="marqWidth" width="250px"
+          >This CRM was bulit with ❤️️ by Ivan Burkush
+        </marquee>
+        <i class="fa-solid fa-square text-primary"></i>
+      </div>
+      <div class="col head-content-right">
+        <ng-container *ngIf="checkLogin()">
+          <div
+            class="row d-lg-flex align-items-center justify-content-end unJustify"
+          >
+            <div
+              class="col col-md-9 d-flex justify-content-end unJustify textSmaill"
+            >
+              <div>
+                You are logged in as:
+                <span class="text-primary"> {{ getUsername() }}</span>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-3 d-flex">
+              <button class="btn btn-primary w-100-btn" (click)="logout()">
+                Logout
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="modalBox viewFont">
+  <div class="bgModal">
+    <h4 class="bgTitle p-3 text-light viewCustomer text-center">
+      <i class="fa-solid fa-eye text-light pe-2"></i>View Customer
+    </h4>
+    <div class="p-2 text-center" (ngSubmit)="viewCustomer()">
+      <b class="viewFont"> Full Name:</b> {{ customer.firstName }}
+      {{ customer.lastName }}
+    </div>
+    <div class="p-2 text-center" (ngSubmit)="viewCustomer()">
+      <b>Phone:</b> {{ customer.phone }}
+    </div>
+    <div
+      class="p-2 text-center"
+      (ngSubmit)="viewCustomer()"
+      *ngIf="customer.address.length > 0"
+    >
+      <b>Address:</b> {{ customer.address }}
+    </div>
+    <div
+      class="p-2 text-center"
+      (ngSubmit)="viewCustomer()"
+      *ngIf="customer.notes.length > 0"
+    >
+      <b>Notes:</b> {{ customer.notes }}
+    </div>
+    <button
+      (click)="viewCustomer()"
+      class="btn mt-2 w-100 border-0 rounded-0 modalBoxExit text-light"
+    >
+      <i class="fa-solid fa-caret-left"></i> Go Back
+    </button>
+  </div>
+</div>
